@@ -22,9 +22,18 @@ const routes = [
         path: '/blog/:post',
         name: 'Post',
         component: () => import('../views/Post.vue')
+    },
+     {
+        path: '/user/:user/post/:post',
+        name: 'UserPost',
+        component: () => import('../views/UserPost.vue')
+    },
+    {
+        path: '/:pathMatch(.*)',
+        name: 'NotFound',
+        component: () => import('../views/NotFound.vue')
     }
 ]
-
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
     routes
