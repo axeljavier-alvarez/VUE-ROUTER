@@ -1,4 +1,6 @@
 <template>
-      <h1>Sobre nosotros</h1>
-    </template>
-    ```
+      <h1>
+        Acerca de
+      </h1>
+</template>
+
