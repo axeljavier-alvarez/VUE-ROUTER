@@ -40,7 +40,11 @@ const routes = [
         component: () => import('../views/Product.vue')
     },
 
-    
+    {
+        path: '/users/:userId?',
+        name: 'Users',
+        component: () => import('../views/Users.vue')
+    },
     {
         path: '/:pathMatch(.*)',
         name: 'NotFound',
