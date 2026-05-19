@@ -23,11 +23,24 @@ const routes = [
         name: 'Post',
         component: () => import('../views/Post.vue')
     },
-     {
+    {
         path: '/user/:user/post/:post',
         name: 'UserPost',
         component: () => import('../views/UserPost.vue')
     },
+    {
+        path: '/compras/:orderId(\\d+)',
+        name: 'Order',
+        component: () => import('../views/Order.vue')
+    },
+
+    {
+        path: '/compras/:productName',
+        name: 'Product',
+        component: () => import('../views/Product.vue')
+    },
+
+    
     {
         path: '/:pathMatch(.*)',
         name: 'NotFound',
