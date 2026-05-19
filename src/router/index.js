@@ -41,9 +41,28 @@ const routes = [
     },
 
     {
-        path: '/users/:userId?',
+        path: '/users/:userId(\\d+)?',
         name: 'Users',
-        component: () => import('../views/Users.vue')
+        component: () => import('../views/Users.vue'),
+        children: [
+        {
+            // users/:userId/profile
+            path: '',
+            component: () => import('../views/users/Index.vue')
+          }, 
+
+          {
+            // users/:userId/profile
+            path: 'profile',
+            component: () => import('../views/users/Profile.vue')
+          }, 
+          
+          {
+            // users/:userId/courses
+            path: 'courses',
+            component: () => import('../views/users/Courses.vue')
+          }
+        ]
     },
     {
         path: '/:pathMatch(.*)',
